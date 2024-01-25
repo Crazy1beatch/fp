@@ -1,1 +1,1 @@
-﻿Can't prepare file to send. Too old document
+﻿Can't send. Can't prepare file to send. Too old document, date of creation: 30.11.1999 0:00:00

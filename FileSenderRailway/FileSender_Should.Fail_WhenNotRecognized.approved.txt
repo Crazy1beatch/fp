@@ -1,1 +1,1 @@
-﻿Can't prepare file to send. Can't recognize
+﻿Can't send. Can't prepare file to send. Can't recognize
