@@ -49,16 +49,16 @@ namespace FileSenderRailway
         private static Result<Document> CheckFormatVersion(Document doc)
         {
             return doc.Format is "4.0" or "3.1"
-                ? new Result<Document>(null, doc)
-                : new Result<Document>($"Invalid format version: {doc.Format}");
+                ? Result.Ok(doc)
+                : Result.Fail<Document>($"Invalid format version: {doc.Format}");
         }
 
         private Result<Document> CheckTimestamp(Document doc)
         {
             var oneMonthBefore = now().AddMonths(-1);
             return doc.Created > oneMonthBefore
-                ? new Result<Document>(null, doc)
-                : new Result<Document>($"Too old document, date of creation: {doc.Created}");
+                ? Result.Ok(doc)
+                : Result.Fail<Document>($"Too old document, date of creation: {doc.Created}");
         }
     }
 }
